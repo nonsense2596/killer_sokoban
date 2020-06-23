@@ -1,30 +1,30 @@
-Leírás:
-A szókoban  („raktáros”) egy olyan fejtöro játék, ahol a játékosnak egy felülnézetes labirintusban kell dobozokat tologatnia a helyükre. Esetünkben ez a játék úgynevezett "többjátékos" formájában fog szerepelni, ami azt jelenti, hogy a pályán nem egy, hanem több játékos tologatja a dobozokat körökre osztott formában. A körökre bontott játékmenet lehetové teszi, hogy a játékosok egymást kijátszva, taktikus gondolkodást alkalmazva gyozedelmeskedjenek a többi felett, emellett így a billentyuzet által nyújtott fizikai korlátozás is elkerülheto (nehéz lenne négyen egy billentyuzeten játszani). 
+# Killer Sokoban
 
-A pálya mérete egy állandó mérettel van megadva amelynek szegélyét egy körbe futó fal elem sorozat reprezentál, benne a pálya elemek viszont véletlenszeruen, procedurálisan vannak generálva. Pálya elemek alatt a falakat, a mezoket, a célmezoket, a ládákat, alap lyukakat, kapcsolókat, az általuk kinyitott lyukakat, és azoknak kapcsolatait, pozícióit, továbbá a játékosokat értjük. Minden pálya elemre szigorú funkcionális megkötések vonatkoznak. 
- 
-A falak olyan elemek, amelyeken dobozokat áttolni nem lehet, és a játékosok sem képesek átmenni rajtuk, mondhatni ez a pálya elem számít a “legerosebbnek”. Általánosságban 
-Szoftver projekt laboratórium  Trolibusz 
+## LeÃ­rÃ¡s:
+A szÃ³koban  (â€raktÃ¡rosâ€) egy olyan fejtÃ¶ro jÃ¡tÃ©k, ahol a jÃ¡tÃ©kosnak egy felÃ¼lnÃ©zetes labirintusban kell dobozokat tologatnia a helyÃ¼kre. EsetÃ¼nkben ez a jÃ¡tÃ©k Ãºgynevezett "tÃ¶bbjÃ¡tÃ©kos" formÃ¡jÃ¡ban fog szerepelni, ami azt jelenti, hogy a pÃ¡lyÃ¡n nem egy, hanem tÃ¶bb jÃ¡tÃ©kos tologatja a dobozokat kÃ¶rÃ¶kre osztott formÃ¡ban. A kÃ¶rÃ¶kre bontott jÃ¡tÃ©kmenet lehetovÃ© teszi, hogy a jÃ¡tÃ©kosok egymÃ¡st kijÃ¡tszva, taktikus gondolkodÃ¡st alkalmazva gyozedelmeskedjenek a tÃ¶bbi felett, emellett Ã­gy a billentyuzet Ã¡ltal nyÃºjtott fizikai korlÃ¡tozÃ¡s is elkerÃ¼lheto (nehÃ©z lenne nÃ©gyen egy billentyuzeten jÃ¡tszani). 
 
-elmondható, hogy ha egy játékos mellett valamilyen irányban fal van, akkor az abba az irányba nem léphet. 
+A pÃ¡lya mÃ©rete egy Ã¡llandÃ³ mÃ©rettel van megadva amelynek szegÃ©lyÃ©t egy kÃ¶rbe futÃ³ fal elem sorozat reprezentÃ¡l, benne a pÃ¡lya elemek viszont vÃ©letlenszeruen, procedurÃ¡lisan vannak generÃ¡lva. PÃ¡lya elemek alatt a falakat, a mezoket, a cÃ©lmezoket, a lÃ¡dÃ¡kat, alap lyukakat, kapcsolÃ³kat, az Ã¡ltaluk kinyitott lyukakat, Ã©s azoknak kapcsolatait, pozÃ­ciÃ³it, tovÃ¡bbÃ¡ a jÃ¡tÃ©kosokat Ã©rtjÃ¼k. Minden pÃ¡lya elemre szigorÃº funkcionÃ¡lis megkÃ¶tÃ©sek vonatkoznak. 
  
-A mezok olyan elemek, amelyekre a dobozok tolhatók és amelyekre a játékosok is léphetnek. Ezeknek a kapcsolata alkotja a bejárható pályarészt. 
+A falak olyan elemek, amelyeken dobozokat Ã¡ttolni nem lehet, Ã©s a jÃ¡tÃ©kosok sem kÃ©pesek Ã¡tmenni rajtuk, mondhatni ez a pÃ¡lya elem szÃ¡mÃ­t a â€œlegerosebbnekâ€. ÃltalÃ¡nossÃ¡gban elmondhatÃ³, hogy ha egy jÃ¡tÃ©kos mellett valamilyen irÃ¡nyban fal van, akkor az abba az irÃ¡nyba nem lÃ©phet. 
  
-A dobozok olyan elemek, amelyek a játékos által tolhatóak, viszont húzni nem lehet oket. Csak olyan irányban mozoghatnak, amilyen irányban a játékos is mozoghat (fel, le, jobbra, balra). A játékos képes arra is, hogy több ládát eltoljon egyszerre: abban az esetben ha a ládák egymás mellett vannak és akad elég hely az eltolásukra. A ládák emellett képesek a lyukakon leesni és megsemmisülni. 
+A mezok olyan elemek, amelyekre a dobozok tolhatÃ³k Ã©s amelyekre a jÃ¡tÃ©kosok is lÃ©phetnek. Ezeknek a kapcsolata alkotja a bejÃ¡rhatÃ³ pÃ¡lyarÃ©szt. 
  
-A célmezok olyan elemek, amelyekre ha egy dobozt rátolunk, a doboz eltunik. Ekkor az a játékos aki a dobozt rátolta kap 1 db pontot. 
+A dobozok olyan elemek, amelyek a jÃ¡tÃ©kos Ã¡ltal tolhatÃ³ak, viszont hÃºzni nem lehet oket. Csak olyan irÃ¡nyban mozoghatnak, amilyen irÃ¡nyban a jÃ¡tÃ©kos is mozoghat (fel, le, jobbra, balra). A jÃ¡tÃ©kos kÃ©pes arra is, hogy tÃ¶bb lÃ¡dÃ¡t eltoljon egyszerre: abban az esetben ha a lÃ¡dÃ¡k egymÃ¡s mellett vannak Ã©s akad elÃ©g hely az eltolÃ¡sukra. A lÃ¡dÃ¡k emellett kÃ©pesek a lyukakon leesni Ã©s megsemmisÃ¼lni. 
  
-A játék egyetlen, felhasználók által direktben irányított eleme a játékos. Ebbol a játékban minimum 2, de akár maximum 4 is lehet. Képessége hogy tologathatja a dobozokat, aktiválhatja a kapcsolókat, mászkálhat a mezokön. Mozgását tekintve csak 4 irányban mozoghat az égtájaknak megfeleloen. Fel, le, jobbra, balra; az átlós mozgás nem engedélyezett. A játékosok egymással szorosabb kapcsolatba nem tudnak lépni, mivel egy mezon egyszerre csak egy játékos lehet. Interakciójuk egyetlen formája az egymással szemben elkövetett szándékos emberölés (amit amúgy a törvény büntet), de ez egy játék, szóval ezt elnézzük. 
+A cÃ©lmezok olyan elemek, amelyekre ha egy dobozt rÃ¡tolunk, a doboz eltunik. Ekkor az a jÃ¡tÃ©kos aki a dobozt rÃ¡tolta kap 1 db pontot. 
  
-A kapcsoló egy speciális mezofajta, amelyre ha a játékos rátol egy ládát, megnyit egy lyukat a pálya egy random pontján. Ez akár olyan mezo is lehet amelyen láda vagy egy másik játékos áll (sot akár saját maga is!). Fontos tényezo, hogy a kapcsoló mezo kinézetre nem különbözik a sima mezotol (így izgalmassabb a játékmenet, mert a játékosokat meglepetések érik). Ha a ládát letolják a kapcsolóról akkor a lyuk amit megnyitott bezárul. 
+A jÃ¡tÃ©k egyetlen, felhasznÃ¡lÃ³k Ã¡ltal direktben irÃ¡nyÃ­tott eleme a jÃ¡tÃ©kos. Ebbol a jÃ¡tÃ©kban minimum 2, de akÃ¡r maximum 4 is lehet. KÃ©pessÃ©ge hogy tologathatja a dobozokat, aktivÃ¡lhatja a kapcsolÃ³kat, mÃ¡szkÃ¡lhat a mezokÃ¶n. MozgÃ¡sÃ¡t tekintve csak 4 irÃ¡nyban mozoghat az Ã©gtÃ¡jaknak megfeleloen. Fel, le, jobbra, balra; az Ã¡tlÃ³s mozgÃ¡s nem engedÃ©lyezett. A jÃ¡tÃ©kosok egymÃ¡ssal szorosabb kapcsolatba nem tudnak lÃ©pni, mivel egy mezon egyszerre csak egy jÃ¡tÃ©kos lehet. InterakciÃ³juk egyetlen formÃ¡ja az egymÃ¡ssal szemben elkÃ¶vetett szÃ¡ndÃ©kos emberÃ¶lÃ©s (amit amÃºgy a tÃ¶rvÃ©ny bÃ¼ntet), de ez egy jÃ¡tÃ©k, szÃ³val ezt elnÃ©zzÃ¼k. 
  
-A lyukat tartalmazó mezo abban jellegzetes, hogy ami rákerül az beleesik és úgymond megszunik létezni (játékos esetén persze, meghal, nullázódik az ideje). Ilyen mezo létezik alapból is, de kapcsoló által is keletkezhet. 
+A kapcsolÃ³ egy speciÃ¡lis mezofajta, amelyre ha a jÃ¡tÃ©kos rÃ¡tol egy lÃ¡dÃ¡t, megnyit egy lyukat a pÃ¡lya egy random pontjÃ¡n. Ez akÃ¡r olyan mezo is lehet amelyen lÃ¡da vagy egy mÃ¡sik jÃ¡tÃ©kos Ã¡ll (sot akÃ¡r sajÃ¡t maga is!). Fontos tÃ©nyezo, hogy a kapcsolÃ³ mezo kinÃ©zetre nem kÃ¼lÃ¶nbÃ¶zik a sima mezotol (Ã­gy izgalmassabb a jÃ¡tÃ©kmenet, mert a jÃ¡tÃ©kosokat meglepetÃ©sek Ã©rik). Ha a lÃ¡dÃ¡t letoljÃ¡k a kapcsolÃ³rÃ³l akkor a lyuk amit megnyitott bezÃ¡rul. 
  
-Ez mind vonatkozik a belso falakra, oszlopokra (egy fal elem), ládákra, kapcsolókra, a kapcsolók által kinyitott lyukra, és magukra a játékosokra is. Fontos kitétel, hogy a pályán nincsenek “generált” csapdák (úgy indul a játékos, hogy minden irányban, vagy legalábbis, északon, délen, keleten és nyugaton falak veszik körül. 
+A lyukat tartalmazÃ³ mezo abban jellegzetes, hogy ami rÃ¡kerÃ¼l az beleesik Ã©s Ãºgymond megszunik lÃ©tezni (jÃ¡tÃ©kos esetÃ©n persze, meghal, nullÃ¡zÃ³dik az ideje). Ilyen mezo lÃ©tezik alapbÃ³l is, de kapcsolÃ³ Ã¡ltal is keletkezhet. 
  
-A játékmenetet tekintve, minden játékosnak fix külön idot adunk (mint a sakkban), ezzel az idovel kell gazdálkodnia a körök alatt. Akinek az ideje lejárt, az többet nem kap lehetoséget a lépésre, ha meghal az ideje automatikusan nullázódik. A játék akkor ér véget ha mindenkinek az ideje lejárt. Ekkor kiértékelodnek a pontok.  A legtöbb ponttal rendelkezo játékos lesz a nyertes. Döntetlenek is kialakulhatnak. A játékosok célja, hogy minél több ládát toljanak a cél mezokre, és így minél több pontot össze tudjanak gyujteni. 
+Ez mind vonatkozik a belso falakra, oszlopokra (egy fal elem), lÃ¡dÃ¡kra, kapcsolÃ³kra, a kapcsolÃ³k Ã¡ltal kinyitott lyukra, Ã©s magukra a jÃ¡tÃ©kosokra is. Fontos kitÃ©tel, hogy a pÃ¡lyÃ¡n nincsenek â€œgenerÃ¡ltâ€ csapdÃ¡k (Ãºgy indul a jÃ¡tÃ©kos, hogy minden irÃ¡nyban, vagy legalÃ¡bbis, Ã©szakon, dÃ©len, keleten Ã©s nyugaton falak veszik kÃ¶rÃ¼l. 
+ 
+A jÃ¡tÃ©kmenetet tekintve, minden jÃ¡tÃ©kosnak fix kÃ¼lÃ¶n idot adunk (mint a sakkban), ezzel az idovel kell gazdÃ¡lkodnia a kÃ¶rÃ¶k alatt. Akinek az ideje lejÃ¡rt, az tÃ¶bbet nem kap lehetosÃ©get a lÃ©pÃ©sre, ha meghal az ideje automatikusan nullÃ¡zÃ³dik. A jÃ¡tÃ©k akkor Ã©r vÃ©get ha mindenkinek az ideje lejÃ¡rt. Ekkor kiÃ©rtÃ©kelodnek a pontok.  A legtÃ¶bb ponttal rendelkezo jÃ¡tÃ©kos lesz a nyertes. DÃ¶ntetlenek is kialakulhatnak. A jÃ¡tÃ©kosok cÃ©lja, hogy minÃ©l tÃ¶bb lÃ¡dÃ¡t toljanak a cÃ©l mezokre, Ã©s Ã­gy minÃ©l tÃ¶bb pontot Ã¶ssze tudjanak gyujteni. 
 
 
-A képeket a projekt gyökérmappájába kell helyezni, hogy mûködjenek.
-Ha az src mappában vannak a .java fileok, 
-akkor az src, a bin mappát, és a .classpath, .project fileokat tartalmazó mappába.
+## Projekt setup: 
+A kÃ©peket a projekt gyÃ¶kÃ©rmappÃ¡jÃ¡ba kell helyezni, hogy mÅ±kÃ¶djenek.
+Ha az src mappÃ¡ban vannak a .java fileok, 
+akkor az src, a bin mappÃ¡t, Ã©s a .classpath, .project, Ã©s mÃ¡s esetleges IDE Ã¡ltal generÃ¡lt fileokat tartalmazÃ³ mappÃ¡ba.
